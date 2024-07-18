@@ -1,0 +1,108 @@
+.bi::before {
+    display: inline-block;
+    content: "";
+    vertical-align: -.125em;
+    background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z' clip-rule='evenodd'/></svg>");
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  :root {
+    --card-height: 40vh;
+    --card-width: 40vh;
+  }
+  
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    box-sizing: border-box;
+  }
+
+  .card-random {
+    /* background: url("../images/whisper-img.jpg"); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: var(--card-width);
+    height: var(--card-height);
+    margin: 15px;
+    position: relative;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    font-size: 1.5em;
+    color: rgb(88 199 250 / 0%);
+  }
+  
+  .card-random:hover {
+    color: rgb(88 199 250 / 100%);
+    transition: color 1s;
+  }
+  .card-random:hover:before,
+  .card-random:hover:after {
+    animation: none;
+    opacity: 0;
+  }
+  
+  .card-random::before {
+    content: "";
+    width: 110%;
+    height: 110%;
+    border-radius: 8px;
+    background-image: linear-gradient(
+      var(--rotate),
+      #5ddcff,
+      #3c67e3 43%,
+      #4e00c2
+    );
+    position: absolute;
+    z-index: -1;
+    top: -5%;
+    left: -5%;
+    animation: spin 2.5s linear infinite;
+  }
+  
+  .card-random::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100;
+    width: auto;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(
+      var(--rotate),
+      #5ddcff,
+      #3c67e3 43%,
+      #4e00c2
+    );
+    opacity: 1;
+    transition: opacity 0.5s;
+    animation: spin 2.5s linear infinite;
+  }
+  @property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+  }
+  
+  @keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+  }
+
+  

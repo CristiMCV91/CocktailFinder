@@ -1,0 +1,37 @@
+<%- include("partials/header.ejs") %>
+<!--Main Page-->
+<!--TITLE-->
+<div class="container py-3">
+  <% if (locals.ingredient) { %>
+    <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3"><%= ingredient %></h1>
+  <% } else if (locals.firstLetter){ %>
+    <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Cocktails by first letter - <%= firstLetter %></h1>
+    <%} else if (locals.cocktailType){ %>
+      <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Cocktails type - <%= cocktailType %></h1>
+    <%}%>
+</div>
+<!--END TITLE-->
+
+<!--COCKTAIL LIST-->
+<div class="container px-4 py-2" id="featured-3">
+    <h2 class="pb-2 border-bottom">Popular Cocktails</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <% cocktails.forEach(cocktail => { %>
+            <div class="feature col flex-column text-center mb-5 ">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3 " >
+                  <a href="/cocktail/id/<%= cocktail.idDrink %>">
+                    <img src="<%= cocktail.strDrinkThumb %>" height="300px" class="rounded-5 border mb-3">
+                    </a>
+                </div>
+                <h4><%= cocktail.strDrink %></h4>
+              </div>
+        <% }) %>    
+    </div>
+  </div>
+<!--END COCKTAIL LIST-->
+
+
+
+
+<!--END Main Page-->
+<%- include("partials/footer.ejs") %>
