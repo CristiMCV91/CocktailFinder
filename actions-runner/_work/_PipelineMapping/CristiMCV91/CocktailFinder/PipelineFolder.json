@@ -1,0 +1,12 @@
+﻿{
+  "repositoryName": "CristiMCV91/CocktailFinder",
+  "pipelineDirectory": "CocktailFinder",
+  "workspaceDirectory": "CocktailFinder\\CocktailFinder",
+  "repositories": {
+    "CristiMCV91/CocktailFinder": {
+      "repositoryPath": "CocktailFinder\\CocktailFinder",
+      "lastRunOn": "07/19/2024 21:56:44 +03:00"
+    }
+  },
+  "lastRunOn": "07/19/2024 21:57:07 +03:00"
+}
