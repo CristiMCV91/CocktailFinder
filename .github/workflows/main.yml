@@ -27,4 +27,5 @@ jobs:
         run: npm install
 
       - name: Run application
-        run: node ../index.js &
+        run: |
+          Start-Process -NoNewWindow -FilePath "node" -ArgumentList "../index.js"
