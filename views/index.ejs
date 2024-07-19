@@ -5,18 +5,22 @@
 <section class="container col-xxl-12 px-4 py-1" id="random">
   <div class="row flex-lg-row-reverse align-items-center g-5 py-3">
     <div class="col-10 col-sm-8 col-lg-4 d-flex flex-column align-items-center">
+      <!-- Link to the cocktail details page with the specific cocktail ID -->
       <a href="/cocktail/id/<%= cocktailId %>">
-      <div class="card-random">
-      <img src="<%= cocktailImage %>" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy" style="border-radius: 6px;">
-      </div></a>
+        <div class="card-random">
+          <!-- Display the cocktail image -->
+          <img src="<%= cocktailImage %>" class="d-block mx-lg-auto img-fluid rounded-4" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+        </div>
+      </a>
+      <!-- Display the cocktail name -->
       <h2 class="p-3"><%= cocktailName %></h2>
-      
     </div>
-    
     <div class="col-lg-8">
+      <!-- Main welcome heading and description -->
       <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Welcome to Cocktail Finder</h1>
       <p class="lead">An open, crowd-sourced database of drinks and cocktails from around the world.</p>
       <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <!-- Button to find a random cocktail -->
         <button type="button" class="btn btn-primary btn-lg px-4 me-md-2" onclick="location.href='/'">Find a random Cocktail</button>
       </div>
     </div>
@@ -27,35 +31,33 @@
 <!--COCKTAILS BY TYPE-->
 <section class="container px-4 py-5" id="type" >
   <h2 class="pb-2 border-bottom">Cocktail type</h2>
-
   <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-
+    <!-- Card for Alcoholic Cocktails -->
     <div class="col">
       <a href="/cocktail-type/Alcoholic" class="text-decoration-none">
-        <div class="card-random card-cover h-100 overflow-hidden rounded-4 " style="background-image: url('./images/alcoholic-cocktails.jpg');">
+        <div class="card-random card-cover h-100 overflow-hidden rounded-4" style="background-image: url('./images/alcoholic-cocktails.jpg');">
           <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
             <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Alcoholic Cocktails</h3>
           </div>
         </div>
       </a>
     </div>
-
+    <!-- Card for Optional Alcohol Cocktails -->
     <div class="col">
       <a href="/cocktail-type/Optional Alcohol" class="text-decoration-none">     
         <div class="card-random card-cover h-100 overflow-hidden rounded-4" style="background-image: url('./images/optional-alcoholic-cocktails.jpg');">
           <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold text-decoration-none">Optional Alcoholic Cocktails</h3>
+            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Optional Alcoholic Cocktails</h3>
           </div>
         </div>
       </a> 
     </div>
-
-    
+    <!-- Card for Non-Alcoholic Cocktails -->
     <div class="col">
       <a href="/cocktail-type/Non_Alcoholic" class="text-decoration-none">     
         <div class="card-random card-cover h-100 overflow-hidden rounded-4" style="background-image: url('./images/non-alcoholic-cocktails.jpg');">
           <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold text-decoration-none">Non-Alcoholic Cocktails</h3>
+            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Non-Alcoholic Cocktails</h3>
           </div>
         </div>
       </a> 
@@ -68,17 +70,22 @@
 <section class="container px-4 py-2" id="popular-ingredients">
   <h2 class="pb-2 border-bottom">Most Popular Cocktail Ingredients</h2>
   <div class="row g-4 py-5 row-cols-1 row-cols-lg-4 d-flex justify-content-center align-items-center">
-
+    <!-- Loop through popular ingredients and create a card for each -->
     <% popularIngredients.forEach(ingredient => { %>
       <div class="feature col flex-column text-center">
-        <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3 " >
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+          <!-- Display the image of the ingredient -->
+          <a href="/ingredient/<%= ingredient %>">
           <img src="./images/ingredients/<%= ingredient %>.png" height="300px">
+          </a>
         </div>
-        <a href="/ingredient/<%= ingredient %>" class="icon-link ">
+        <!-- Link to the ingredient page -->
+        <a href="/ingredient/<%= ingredient %>" class="icon-link">
           <%= ingredient %>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
-          </svg>      </a>
+          </svg>
+        </a>
       </div>
     <% }) %>
   </div>
@@ -92,6 +99,7 @@
     <div class="bd-example m-0 border-0">
       <nav aria-label="Standard pagination example">
         <ul class="pagination d-flex justify-content-center flex-wrap">
+          <!-- Loop through alphabet and create a link for each letter -->
           <% alphabet.forEach(char => { %>
             <li class="page-item py-2"><a class="page-link" href="/first-letter/<%= char %>"><%= char %></a></li>
           <% }) %>
@@ -106,13 +114,16 @@
 <section class="container px-4 py-2" id="ingredients">
   <h2 class="pb-2 border-bottom">Cocktail by Ingredients</h2>
   <div class="d-flex flex-wrap justify-content-center g-4 py-5">
+    <!-- Loop through ingredients and create a card for each -->
     <% ingredients.forEach(ingredient => { %>
       <div class="feature text-center mb-5" style="flex: 1 0 16%; max-width: 16%; min-width: 150px;">
         <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
           <a href="/ingredient/<%= ingredient.strIngredient1 %>">
+            <!-- Display the image of the ingredient -->
             <img src="https://www.thecocktaildb.com/images/ingredients/<%= ingredient.strIngredient1 %>-Medium.png" class="d-inline" alt="<%= ingredient.strIngredient1 %>" height="100px" class="rounded-5 border mb-3">
           </a>
         </div>
+        <!-- Display the ingredient name -->
         <p><%= ingredient.strIngredient1 %></p>
       </div>
     <% }) %>    
@@ -120,16 +131,5 @@
 </section>
 <!--END INGREDIENTS COCKTAIL LIST-->
 
-
-
-
-
-
-
-
-
-
-
 <!--END Main Page-->
 <%- include("partials/footer.ejs") %>
-    

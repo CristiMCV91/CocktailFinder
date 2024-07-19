@@ -23,7 +23,7 @@
   }
 
   .card-random {
-    /* background: url("../images/whisper-img.jpg"); */
+    /* background: url("...jpg"); */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -31,7 +31,6 @@
     height: var(--card-height);
     margin: 15px;
     position: relative;
-    border-radius: 6px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -54,7 +53,6 @@
     content: "";
     width: 110%;
     height: 110%;
-    border-radius: 8px;
     background-image: linear-gradient(
       var(--rotate),
       #5ddcff,
@@ -90,12 +88,14 @@
     transition: opacity 0.5s;
     animation: spin 2.5s linear infinite;
   }
+  /* Define custom property for rotation */
   @property --rotate {
     syntax: "<angle>";
     initial-value: 132deg;
     inherits: false;
   }
-  
+
+  /* Keyframes for spin animation */
   @keyframes spin {
     0% {
       --rotate: 0deg;

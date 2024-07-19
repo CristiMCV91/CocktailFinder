@@ -1,52 +1,56 @@
 <%- include("partials/header.ejs") %>
-<!--Main Page-->
+<!-- Main Page -->
 <div class="container py-3">
-<h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3"><%= cocktail.strDrink %></h1>
+    <!-- Display the cocktail name -->
+    <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3"><%= cocktail.strDrink %></h1>
 </div>
 
-<div class="container d-flex py-5  ">
+<div class="container d-flex py-5">
+    <!-- Display the cocktail image -->
     <div class="col-4">
-        <img src="<%= cocktail.strDrinkThumb %>" class="d-block mx-lg-auto img-fluid rounded-5" alt="Bootstrap Themes" width="700" height="500" loading="lazy" >
+        <img src="<%= cocktail.strDrinkThumb %>" class="d-block mx-lg-auto img-fluid rounded-5" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
     </div>
 
     <div class="container px-5" id="icon-grid">
+        <!-- Ingredients section header -->
         <h2 class="pb-2 border-bottom">Ingredients</h2>
     
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-4 ">
-            <% for( let index = 1; index <= 15; index++ ) { %>
+        <!-- Grid for displaying ingredients and measurements -->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-4">
+            <% for (let index = 1; index <= 15; index++) { %>
                 <% if (cocktail[`strIngredient${index}`] !== null) { %>
-    
-                    <div class="col d-flex align-items-center justify-content-cente">
+                    <div class="col d-flex align-items-center justify-content-center">
                         <div class="text-center">
-                            <img src="https://www.thecocktaildb.com/images/ingredients/<%= cocktail[`strIngredient${index}`]%>-Medium.png" height="120px">
-                        <p><%= cocktail[`strMeasure${index}`]%> of <%= cocktail[`strIngredient${index}`]%></p>
+                            <!-- Display ingredient image -->
+                            <img src="https://www.thecocktaildb.com/images/ingredients/<%= cocktail[`strIngredient${index}`] %>-Medium.png" height="120px">
+                            <!-- Display measurement and ingredient name -->
+                            <p><%= cocktail[`strMeasure${index}`] %> of <%= cocktail[`strIngredient${index}`] %></p>
                         </div>
                     </div>
                 <% } %>
-          <% } %>   
-    
-        </div>
-      </div>
-</div>
-<div class="container py-4 border-top">
-    <div class="row align-items-md-stretch">
-        <div class="col-md-6">
-        <div class="h-100 p-5 text-bg-dark rounded-3">
-            <h2>Instructions</h2>
-            <p><%= cocktail.strInstructions%></p>
-        </div>
-        </div>
-        <div class="col-md-6">
-        <div class="h-100 p-5 bg-body-tertiary border rounded-3">
-            <h2>Glass</h2>
-            <p>Serve: <%= cocktail.strGlass %></p>
-        </div>
+            <% } %>
         </div>
     </div>
 </div>
 
+<div class="container py-4 border-top">
+    <div class="row align-items-md-stretch">
+        <!-- Instructions section -->
+        <div class="col-md-6">
+            <div class="h-100 p-5 text-bg-dark rounded-3">
+                <h2>Instructions</h2>
+                <p><%= cocktail.strInstructions %></p>
+            </div>
+        </div>
+        <!-- Glass section -->
+        <div class="col-md-6">
+            <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+                <h2>Glass</h2>
+                <p>Serve: <%= cocktail.strGlass %></p>
+            </div>
+        </div>
+    </div>
+</div>
 
-
-
-<!--END Main Page-->
+<!-- END Main Page -->
 <%- include("partials/footer.ejs") %>

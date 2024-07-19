@@ -1,15 +1,16 @@
 {
-  "name": "5.6-secrets-project",
+  "name": "Cocktail Finder",
   "version": "1.0.0",
-  "description": "",
+  "description": "A page where you can find cocktail ingredients",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Cristian Macovei",
   "license": "ISC",
+
   "dependencies": {
     "axios": "^1.4.0",
     "body-parser": "^1.20.2",
