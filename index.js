@@ -55,7 +55,6 @@ app.get("/cocktail/id/:id", async (req, res) => {
     // Make a request to get the cocktail details by ID
     const response = await axios.get(API_URL + "lookup.php?i=" + cocktailId);
     const result = response.data.drinks[0];
-    console.log(result);
     // Render the cocktail.ejs template with the cocktail data
     res.render("cocktail.ejs", {
       cocktail: result
@@ -75,7 +74,6 @@ app.get("/ingredient/:ingredientName", async (req, res) => {
     // Make a request to get cocktails by ingredient
     const response = await axios.get(API_URL + "filter.php?i=" + ingredientName);
     const result = response.data.drinks;
-    console.log(result);
     // Render the find-cocktails.ejs template with the ingredient and cocktail data
     res.render("find-cocktails.ejs", {
       ingredient: ingredientName,
@@ -96,7 +94,6 @@ app.get("/first-letter/:firstLetter", async (req, res) => {
     // Make a request to get cocktails by first letter
     const response = await axios.get(API_URL + "search.php?f=" + firstLetter);
     const result = response.data.drinks;
-    console.log(result);
     // Render the find-cocktails.ejs template with the first letter and cocktail data
     res.render("find-cocktails.ejs", {
       firstLetter: firstLetter,
@@ -117,7 +114,6 @@ app.get("/cocktail-type/:type", async (req, res) => {
     // Make a request to get cocktails by type
     const response = await axios.get(API_URL + "filter.php?a=" + cocktailType);
     const result = response.data.drinks;
-    console.log(result);
     // Render the find-cocktails.ejs template with the cocktail type and cocktail data
     res.render("find-cocktails.ejs", {
       cocktailType: cocktailType,
