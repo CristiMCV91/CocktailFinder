@@ -11,9 +11,11 @@ Important Note: Wait 50 seconds after first access and try again. Because the se
 ![Cocktail By Type](<resources/2. Cocktail Finder - By Type.jpg>)
 ![Cocktail By Popular Ingredients](<resources/3. Cocktail Finder - By Popular Ingredients.jpg>)
 ![Cocktail By Ingredients](<resources/4. Cocktail Finder - By Ingredients.jpg>)
+---
 ### Cocktail Details
+---
 ![Cocktail Details](<resources/5. Cocktail Finder - Cocktail Details.jpg>)
-
+---
 ## Features
 
 - **Random Cocktail Display**: Showcases a randomly selected cocktail on the homepage.
