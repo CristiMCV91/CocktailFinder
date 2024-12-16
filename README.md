@@ -2,8 +2,17 @@
 
 Cocktail Finder is a web-based application that allows users to explore various cocktails by ingredients, first letters, and types. The application provides detailed information about each cocktail, including ingredients, measurements, instructions, and the type of glass to use.
 
-## API Used
-This application uses a public API [TheCocktailDB](https://www.thecocktaildb.com/api.php) to fetch data about cocktails. The API provides a wide range of endpoints to access cocktail information.
+Access Website: https://cocktailfinder.onrender.com/ 
+
+Important Note: Wait 50 seconds after first access and try again. Because the server is free, this in a hibernate state and you will activate it after first click.
+
+## First Page
+![Header](<resources/1. Cocktail Finder - Header.jpg>)
+![Cocktail By Type](<resources/2. Cocktail Finder - By Type.jpg>)
+![Cocktail By Popular Ingredients](<resources/3. Cocktail Finder - By Popular Ingredients.jpg>)
+![Cocktail By Ingredients](<resources/4. Cocktail Finder - By Ingredients.jpg>)
+### Cocktail Details
+![Cocktail Details](<resources/5. Cocktail Finder - Cocktail Details.jpg>)
 
 ## Features
 
@@ -36,6 +45,10 @@ This application uses a public API [TheCocktailDB](https://www.thecocktaildb.com
   - `css/`: Custom CSS styles for the application.
   - `images/`: Images used in the application.
 - `styles.css`: Custom CSS for styling various components of the application.
+
+
+## API Used
+This application uses a public API [TheCocktailDB](https://www.thecocktaildb.com/api.php) to fetch data about cocktails. The API provides a wide range of endpoints to access cocktail information.
 
 
 ## Development
