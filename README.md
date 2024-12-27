@@ -2,7 +2,8 @@
 
 Cocktail Finder is a web-based application that allows users to explore various cocktails by ingredients, first letters, and types. The application provides detailed information about each cocktail, including ingredients, measurements, instructions, and the type of glass to use.
 
-Access Website: https://cocktailfinder.onrender.com/ 
+Access Website: <a href="https://cocktailfinder.onrender.com/" target="_blank">https://cocktailfinder.onrender.com/</a>
+
 
 Important Note: Wait 50 seconds after first access and try again. Because the server is free, this in a hibernate state and you will activate it after first click.
 
@@ -50,12 +51,13 @@ Important Note: Wait 50 seconds after first access and try again. Because the se
 
 
 ## API Used
-This application uses a public API [TheCocktailDB](https://www.thecocktaildb.com/api.php) to fetch data about cocktails. The API provides a wide range of endpoints to access cocktail information.
+This application uses a public API <a href="https://www.thecocktaildb.com/api.php" target="_blank">TheCocktailDB </a> to fetch data about cocktails. The API provides a wide range of endpoints to access cocktail information.
 
 
 ## Development
 
 - **Author**: Cristian M.
+
 - **Version**: 1.0
 - **Date**: 18.07.2024
 
